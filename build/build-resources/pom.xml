@@ -26,7 +26,7 @@
 
     <groupId>org.richfaces</groupId>
     <artifactId>richfaces-build-resources</artifactId>
-    <version>4.5.12.Final</version>
+    <version>4.5.12.Final-NX1-SNAPSHOT</version>
     <name>RichFaces Build Resources</name>
 
     <description>
@@ -50,7 +50,7 @@
     </developers>
 
     <properties>
-        <version.richfaces>4.5.12.Final</version.richfaces>
+        <version.richfaces>4.5.12.Final-NX1-SNAPSHOT</version.richfaces>
 
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
@@ -197,16 +197,41 @@
   </scm>
 
     <distributionManagement>
+        <!-- Nuxeo repositories -->
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>${jboss.releases.repo.url}</url>
+            <id>vendor-releases</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-releases</url>
         </repository>
         <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>${jboss.snapshots.repo.url}</url>
+            <id>vendor-snapshots</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-snapshots</url>
+            <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <repositories>
+        <!-- Nuxeo repositories -->
+        <repository>
+            <id>public</id>
+            <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>public-snapshot</id>
+            <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+  </repositories>
 
 </project>

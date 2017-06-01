@@ -1,5 +1,5 @@
-4.5.12.Final
-------------
+4.5.12.Final-NX1-SNAPSHOT
+-------------------------
 
     Bug
     [RF-10642] - Autocomplete does not have a title attribute
