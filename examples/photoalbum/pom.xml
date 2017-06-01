@@ -26,7 +26,7 @@
 
     <groupId>org.richfaces.examples</groupId>
     <artifactId>richfaces-photoalbum</artifactId>
-    <version>4.5.0.Alpha3</version>
+    <version>4.5.0.Alpha3-NX1-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <name>RichFaces Photoalbum</name>
@@ -52,7 +52,7 @@
     </developers>
 
     <properties>
-        <version.richfaces>4.5.0.Alpha3</version.richfaces>
+        <version.richfaces>4.5.0.Alpha3-NX1-SNAPSHOT</version.richfaces>
         <version.metadata-extractor>2.6.2</version.metadata-extractor>
         <version.jackson>1.9.12</version.jackson>
         <javax.faces.PROJECT_STAGE>Development</javax.faces.PROJECT_STAGE>
@@ -860,15 +860,41 @@
   </scm>
 
     <distributionManagement>
+        <!-- Nuxeo repositories -->
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>${jboss.releases.repo.url}</url>
+            <id>vendor-releases</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-releases</url>
         </repository>
         <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>${jboss.snapshots.repo.url}</url>
+            <id>vendor-snapshots</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-snapshots</url>
+            <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
+
+    <repositories>
+        <!-- Nuxeo repositories -->
+        <repository>
+            <id>public</id>
+            <url>http://maven.nuxeo.org/nexus/content/groups/public</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>public-snapshot</id>
+            <url>http://maven.nuxeo.org/nexus/content/groups/public-snapshot</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <updatePolicy>always</updatePolicy>
+                <enabled>true</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+
 </project>

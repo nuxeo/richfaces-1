@@ -25,7 +25,7 @@
     <groupId>org.richfaces</groupId>
     <artifactId>richfaces-build</artifactId>
     <packaging>pom</packaging>
-    <version>4.5.0.Alpha3</version>
+    <version>4.5.0.Alpha3-NX1-SNAPSHOT</version>
     <name>RichFaces Build Version Management</name>
 
     <description>
@@ -57,7 +57,7 @@
 
     <properties>
         <!-- Base Dependencies Versions -->
-        <version.richfaces>4.5.0.Alpha3</version.richfaces>
+        <version.richfaces>4.5.0.Alpha3-NX1-SNAPSHOT</version.richfaces>
         <version.cdk>4.5.0.Alpha2</version.cdk>
         <version.jboss-javaee>3.0.2.Final</version.jboss-javaee>
 
@@ -170,12 +170,12 @@
             <dependency>
                 <groupId>org.richfaces</groupId>
                 <artifactId>richfaces</artifactId>
-                <version>4.5.0.Alpha3</version>
+                <version>4.5.0.Alpha3-NX1-SNAPSHOT</version>
             </dependency>
             <dependency>
                 <groupId>org.richfaces</groupId>
                 <artifactId>richfaces-push-depchain</artifactId>
-                <version>4.5.0.Alpha3</version>
+                <version>4.5.0.Alpha3-NX1-SNAPSHOT</version>
                 <type>pom</type>
             </dependency>
             <dependency>
@@ -590,15 +590,15 @@
     </scm>
 
     <distributionManagement>
+        <!-- Nuxeo repositories -->
         <repository>
-            <id>jboss-releases-repository</id>
-            <name>JBoss Releases Repository</name>
-            <url>${jboss.releases.repo.url}</url>
+            <id>vendor-releases</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-releases</url>
         </repository>
         <snapshotRepository>
-            <id>jboss-snapshots-repository</id>
-            <name>JBoss Snapshots Repository</name>
-            <url>${jboss.snapshots.repo.url}</url>
+            <id>vendor-snapshots</id>
+            <url>http://maven.nuxeo.org/nexus/content/repositories/vendor-snapshots</url>
+            <uniqueVersion>true</uniqueVersion>
         </snapshotRepository>
     </distributionManagement>
 
