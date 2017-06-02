@@ -422,8 +422,8 @@ public class CoreDeployment extends Deployment {
     }
 
     public void withWholeFramework() {
-        addMavenDependency("org.richfaces:richfaces:4.5.0.Alpha3-NX1-SNAPSHOT");
-        addMavenDependency("org.richfaces:richfaces-a4j:4.5.0.Alpha3-NX1-SNAPSHOT");
+        addMavenDependency("org.richfaces:richfaces:4.5.0.Alpha3-NX1");
+        addMavenDependency("org.richfaces:richfaces-a4j:4.5.0.Alpha3-NX1");
     }
 
     /**
