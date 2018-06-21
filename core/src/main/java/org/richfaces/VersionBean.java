@@ -59,7 +59,7 @@ public final class VersionBean {
         private static final String UNKNOWN = "";
         private String implementationVendor = UNKNOWN;
         // TODO nick - default value for manifest file absense - review
-        private String implementationVersion = "4.5.12.Final-NX1-SNAPSHOT";
+        private String implementationVersion = "4.5.12.Final-NX2-SNAPSHOT";
         private String implementationTitle = UNKNOWN;
         private String scmTimestamp = UNKNOWN;
         private String fullVersionString = UNKNOWN;
