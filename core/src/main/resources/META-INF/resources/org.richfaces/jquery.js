@@ -6001,26 +6001,22 @@ jQuery.fn.extend({
 			fragment = first = null;
 
 			if ( scripts.length ) {
-				doc = scripts[ scripts.length - 1 ].ownerDocument;
 				jQuery.each( scripts, function( i, elem ) {
-					if ( rscriptType.test( elem.type || "" ) &&
-							!jQuery._data( elem, "globalEval" ) && jQuery.contains( doc, elem ) ) {
-						if ( elem.src ) {
-							if ( jQuery.ajax ) {
-								jQuery.ajax({
-									url: elem.src,
-									type: "GET",
-									dataType: "script",
-									async: false,
-									global: false,
-									"throws": true
-								});
-							} else {
-								jQuery.error("no ajax");
-							}
+					if ( elem.src ) {
+						if ( jQuery.ajax ) {
+							jQuery.ajax({
+								url: elem.src,
+								type: "GET",
+								dataType: "script",
+								async: false,
+								global: false,
+								"throws": true
+							});
 						} else {
-							jQuery.globalEval( ( elem.text || elem.textContent || elem.innerHTML || "" ).replace( rcleanScript, "" ) );
+							jQuery.error("no ajax");
 						}
+					} else {
+						jQuery.globalEval( ( elem.text || elem.textContent || elem.innerHTML || "" ).replace( rcleanScript, "" ) );
 					}
 
 					if ( elem.parentNode ) {
